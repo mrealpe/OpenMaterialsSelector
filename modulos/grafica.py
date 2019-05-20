@@ -31,10 +31,10 @@ def recta3(n):
     plt.loglog(x, y, '-', label='E^(1/3)/ρ,{}'.format(n))
 
 def densidadVertical(densidad,maximoD):
-    plt.loglog([densidad,densidad],[0,maximoD],'c')
+    plt.loglog([densidad,densidad],[0,maximoD],'C1')
 
 def ModuloHorizontal(modulo,maximoModulo):
-    plt.loglog([0,maximoModulo],[modulo,modulo], 'c')
+    plt.loglog([0,maximoModulo],[modulo,modulo], 'C3')
 
 def grafica(diccionario,listaDensidad,listaModulo,listaMaterialesFiltrada,listaDensidadFiltrada,listaModuloFiltrada,densidad,modulo,rigidez,pendiente):
     leyendaFamilias={'Glass':'m.',
@@ -67,8 +67,9 @@ def grafica(diccionario,listaDensidad,listaModulo,listaMaterialesFiltrada,listaD
         recta3(rigidez)
     densidadVertical(densidad, max(listaModulo))
     ModuloHorizontal(modulo, max(listaDensidad))
-    plt.xlabel('Density')
-    plt.ylabel('Modulus of Elasticity')
+    plt.grid()
+    plt.xlabel('Density. ρ (Kg/m^3)')
+    plt.ylabel('Modulus of Elasticity. E(GPa)')
     plt.legend(loc='upper left')
 
     #grafico 2
@@ -93,6 +94,7 @@ def grafica(diccionario,listaDensidad,listaModulo,listaMaterialesFiltrada,listaD
         recta3(rigidez)
     densidadVertical(densidad, max(listaModulo))
     ModuloHorizontal(modulo, max(listaDensidad))
-    plt.xlabel('Density')
-    plt.ylabel('Modulus of Elasticity')
+    plt.grid()
+    plt.xlabel('Density. ρ (Kg/m^3)')
+    plt.ylabel('Modulus of Elasticity. E(GPa)')
     plt.legend(loc='upper left')
