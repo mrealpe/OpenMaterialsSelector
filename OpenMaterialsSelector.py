@@ -10,6 +10,7 @@ import modulos.interfaz as interfaz
 import modulos.extraerInformacion as extraerInformacion
 import modulos.filtrar as filtrar
 import modulos.grafica as grafica
+import modulos.escribirArchivos as escribirArchivos
 
 __author__ = "Bruno Paucar, Giovanny Chunga and Miguel Realpe"
 __credits__ = ["Bruno Paucar", "Giovanny Chunga", "Miguel Realpe",
@@ -38,6 +39,9 @@ listaMaterialesFinal,listaDensidadFinal,listaModuloFinal = filtrar.filtrar(lista
 
 #Si la cantidad de materiales filtrados supera los 500, es preferible utilizar arreglos (procesamiento mas rapido)
 #listaMaterialesFinal,listaDensidadFinal,listaModuloFinal = filtrar.filtrarArreglos(listaMateriales,listaTipos,listaDensidad,listaModulo,familia,densidad,densi_mayor,modulo, modu_mayor)
+
+#Escribir Archivos de texto
+escribirArchivos.escribirArchivos(listaMaterialesFinal,listaDensidadFinal,listaModuloFinal,familia,rigidez,densidad,modulo,slope_mayor,densi_mayor,modu_mayor,pendiente)
 
 #Graficar valores
 g = grafica.grafica(diccionario,listaDensidad,listaModulo,listaMaterialesFinal,listaDensidadFinal,listaModuloFinal,densidad,modulo,rigidez,pendiente)
